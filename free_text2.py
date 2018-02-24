@@ -7,3 +7,10 @@ vocab = sorted(set(sum(document_word,[])))
 vocab_dict = {k:i for i,k in enumerate(vocab)}
 print(vocab,"\n")
 print(vocab_dict,"\n")
+
+import numpy as np
+X_tf = np.zeros((len(documents),len(vocab)),dtype=int)
+for i,doc in enumerate(document_word):
+    for word in doc:
+        X_tf[i,vocab_dict[word]]+=1
+print(X_tf)
