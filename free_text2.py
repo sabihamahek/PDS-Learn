@@ -20,3 +20,8 @@ print(idf)
 
 X_tfidf = X_tf*idf
 print(X_tfidf)
+
+
+X_tfidf_norm = X_tfidf/np.linalg.norm(X_tfidf,axis=1)[:,None]
+M = X_tfidf_norm @ X_tfidf_norm.T
+print(M)
